@@ -1,31 +1,37 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 const lista = [];
 
 function adicionarAmigo() {
+    let inputLista = document.getElementById('amigo').value;
 
-    let inputLista = document.getElementById('amigo').value
-
-    if (inputLista == " ") {
-        alert("Por favor, insira um nome")
-        return false
+    if (inputLista.trim() === "") { // Verifica se está vazio (melhor que " ")
+        alert("Por favor, insira um nome");
+        return false;
     }
 
     lista.push(inputLista);
-    document.getElementById('listaAmigos').innerHTML = lista
-    document.getElementById('amigo').value = " "
-   
+    atualizarListaAmigos(); // Chama a função que atualiza a lista em <li>
+    document.getElementById('amigo').value = ""; // Limpa o campo
 }
 
+function atualizarListaAmigos() {
+    const listaHTML = document.getElementById('listaAmigos');
+    listaHTML.innerHTML = ""; // Limpa a lista antes de recriar
 
-function processo_sorteio(amigos){
-    const sorteio = Math.floor(Math.random() * amigos.length)
-    return amigos[sorteio]
-    
+    // Percorre o array e adiciona cada nome como <li>
+    for (let i = 0; i < lista.length; i++) {
+        const itemLista = document.createElement('li');
+        itemLista.textContent = lista[i];
+        listaHTML.appendChild(itemLista);
+    }
 }
 
-function sortearAmigo(){
+// Funções de sorteio (mantidas como no seu código original)
+function processo_sorteio(amigos) {
+    const sorteio = Math.floor(Math.random() * amigos.length);
+    return amigos[sorteio];
+}
 
-    const resultadosorteio = processo_sorteio(lista)
-    document.getElementById("resultado").innerHTML = resultadosorteio
-
+function sortearAmigo() {
+    const resultadosorteio = processo_sorteio(lista);
+    document.getElementById("resultado").innerHTML = resultadosorteio;
 }
