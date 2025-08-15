@@ -5,7 +5,7 @@
 </div>
 
 
-<h1 align = "center"> Jogo do Amigo Secreto - Challenger ONE & ALURA </h1>
+<h1 align = "center"> Jogo do Amigo Secreto - Challenge ONE & ALURA </h1>
 <p>Um sorteio de Amigo Secreto simples e interativo, feito com JavaScript puro. Adicione os nomes dos participantes e clique em "Sortear" para gerar os pares aleatórios!
 </p>
 
